@@ -2,32 +2,31 @@
 {
     internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            for (int i = 0; i < 4; i++){
-                var inputstring = Console.ReadLine();
-                if (inputstring != null)
+            for (var i = 0; i < 4; i++){
+                var userInput = Console.ReadLine();
+                if (userInput == null) continue;
+                var input = int.Parse(userInput);
+                var output = 0;
+                var x = input;
+                
+                while (x != 1)
                 {
-                    int input = int.Parse(inputstring);
-                    int output = 0;
-                    int x = input;
-                
-                    while (x != 1)
+                    if (x % 2 == 0)
                     {
-                        if (x % 2 == 0)
-                        {
-                            x = x / 2;
-                        }
-                        else
-                        {
-                            x = 3 * x + 1;
-                        }
-                
-                        output++;
+                        x = x / 2;
+                    }
+                    else
+                    {
+                        x = 3 * x + 1;
                     }
                 
-                    Console.WriteLine(output);
+                    output++;
                 }
+                
+                Console.WriteLine(output);
+                
             }
         }
     }
