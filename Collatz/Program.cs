@@ -9,7 +9,7 @@
                 if (userInput == null) continue;
                 var input = int.Parse(userInput);
                 var output = 0;
-                var x = input;
+                long x = input;
                 
                 while (x != 1)
                 {
