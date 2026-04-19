@@ -4,26 +4,30 @@
     {
         static void Main(string[] args)
         {
-            var inputstring = Console.ReadLine();
-            if (inputstring != null)
-            {
-                int input = int.Parse(inputstring);
-                int output = 0;
-                int x = input;
-                
-                while (x != 1)
+            for (int i = 0; i < 4; i++){
+                var inputstring = Console.ReadLine();
+                if (inputstring != null)
                 {
-                    if (x % 2 == 0)
+                    int input = int.Parse(inputstring);
+                    int output = 0;
+                    int x = input;
+                
+                    while (x != 1)
                     {
-                        x = x / 2;
+                        if (x % 2 == 0)
+                        {
+                            x = x / 2;
+                        }
+                        else
+                        {
+                            x = 3 * x + 1;
+                        }
+                
+                        output++;
                     }
-                    else
-                    {
-                        x = 3 * x + 1;
-                    }
-                    output++;
+                
+                    Console.WriteLine(output);
                 }
-                Console.WriteLine(output);
             }
         }
     }
